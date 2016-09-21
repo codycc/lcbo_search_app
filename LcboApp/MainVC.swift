@@ -43,6 +43,7 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
                         self.liquorArr.append(liquorResult)
                         print(obj)
                     }
+                    //dont forget to reload the data
                     self.tableView.reloadData()
                 }
             }
@@ -57,10 +58,13 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return liquorArr.count
     }
+    
+    // going through the liquor array and storing each one in a cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "LiquorCell", for: indexPath) as? LiquorCell {
             // pull out each liquor from the liquor array
             let liquor = liquorArr[indexPath.row]
+            //passing that instance to the configure cell function
             cell.configureCell(liquor: liquor)
             return cell
         } else {

@@ -92,7 +92,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="473ml Can" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oge-aG-u6S">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="115" id="cle-wT-ceZ"/>
+                                                        <constraint firstAttribute="width" constant="179" id="cle-wT-ceZ"/>
                                                         <constraint firstAttribute="height" constant="21" id="kSJ-Qc-7on"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
@@ -120,6 +120,7 @@
                                         <connections>
                                             <outlet property="ItemNameLbl" destination="PKc-xg-cLj" id="XKU-77-uzs"/>
                                             <outlet property="itemPriceLbl" destination="EKA-ME-DKQ" id="FC9-49-PXI"/>
+                                            <outlet property="itemURL" destination="pw1-rW-Dfp" id="R3L-d3-1sx"/>
                                             <outlet property="productSizeLbl" destination="oge-aG-u6S" id="Ctd-KT-yuc"/>
                                         </connections>
                                     </tableViewCell>
