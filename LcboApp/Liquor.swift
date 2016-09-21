@@ -16,6 +16,7 @@ class Liquor {
     private var _package: String!
     private var _alcohol_content: String!
     private var _imageURL: String!
+  
     
     var name: String {
         if _name == nil {
