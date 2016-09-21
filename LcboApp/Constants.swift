@@ -8,3 +8,9 @@
 
 import Foundation
 
+let FULL_URL = "https://lcboapi.com/products?access_key=\(ACCESS_KEY)"
+let ACCESS_KEY = ""
+
+
+
+typealias DownloadComplete = () -> ()

@@ -14,6 +14,10 @@
 		0B267F761D930C41001A6A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B267F741D930C41001A6A21 /* LaunchScreen.storyboard */; };
 		0B267F811D930C41001A6A21 /* LcboAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F801D930C41001A6A21 /* LcboAppTests.swift */; };
 		0B267F911D9314EA001A6A21 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F901D9314EA001A6A21 /* Constants.swift */; };
+		0B267F951D931A22001A6A21 /* Liquor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F941D931A22001A6A21 /* Liquor.swift */; };
+		0B267F971D931D84001A6A21 /* LiquorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F961D931D84001A6A21 /* LiquorCell.swift */; };
+		0BB092B21D93369D00A71A79 /* LiquorResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB092B11D93369D00A71A79 /* LiquorResults.swift */; };
+		5D0FCB0FDA912CAEE64FE167 /* Pods_LcboApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EE8A8F7E2E540BE2CFCEF1 /* Pods_LcboApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,12 @@
 		0B267F801D930C41001A6A21 /* LcboAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LcboAppTests.swift; sourceTree = "<group>"; };
 		0B267F821D930C41001A6A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B267F901D9314EA001A6A21 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0B267F941D931A22001A6A21 /* Liquor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Liquor.swift; sourceTree = "<group>"; };
+		0B267F961D931D84001A6A21 /* LiquorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquorCell.swift; sourceTree = "<group>"; };
+		0BB092B11D93369D00A71A79 /* LiquorResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquorResults.swift; sourceTree = "<group>"; };
+		42EE8A8F7E2E540BE2CFCEF1 /* Pods_LcboApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LcboApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E416D4C2160F403B85DB90D /* Pods-LcboApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LcboApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LcboApp/Pods-LcboApp.debug.xcconfig"; sourceTree = "<group>"; };
+		77466EB21C8FDFF2A7005FB9 /* Pods-LcboApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LcboApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LcboApp/Pods-LcboApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D0FCB0FDA912CAEE64FE167 /* Pods_LcboApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +75,8 @@
 				0B267F6A1D930C41001A6A21 /* LcboApp */,
 				0B267F7F1D930C41001A6A21 /* LcboAppTests */,
 				0B267F691D930C41001A6A21 /* Products */,
+				CE8C8BE795989ED76A6CFA50 /* Pods */,
+				3EC93A4C73C5BBDE3DF0695B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,11 +92,11 @@
 		0B267F6A1D930C41001A6A21 /* LcboApp */ = {
 			isa = PBXGroup;
 			children = (
+				0B267F8B1D930C4A001A6A21 /* Model */,
+				0B267F8C1D930C4F001A6A21 /* View */,
+				0B267F8D1D930C53001A6A21 /* Controller */,
 				0B267F8F1D9314A2001A6A21 /* Util */,
 				0B267F8E1D930C57001A6A21 /* Resources */,
-				0B267F8D1D930C53001A6A21 /* Controller */,
-				0B267F8C1D930C4F001A6A21 /* View */,
-				0B267F8B1D930C4A001A6A21 /* Model */,
 				0B267F6B1D930C41001A6A21 /* AppDelegate.swift */,
 			);
 			path = LcboApp;
@@ -101,6 +114,8 @@
 		0B267F8B1D930C4A001A6A21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0B267F941D931A22001A6A21 /* Liquor.swift */,
+				0BB092B11D93369D00A71A79 /* LiquorResults.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -110,6 +125,7 @@
 			children = (
 				0B267F741D930C41001A6A21 /* LaunchScreen.storyboard */,
 				0B267F6F1D930C41001A6A21 /* Main.storyboard */,
+				0B267F961D931D84001A6A21 /* LiquorCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -139,6 +155,23 @@
 			name = Util;
 			sourceTree = "<group>";
 		};
+		3EC93A4C73C5BBDE3DF0695B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42EE8A8F7E2E540BE2CFCEF1 /* Pods_LcboApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE8C8BE795989ED76A6CFA50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E416D4C2160F403B85DB90D /* Pods-LcboApp.debug.xcconfig */,
+				77466EB21C8FDFF2A7005FB9 /* Pods-LcboApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +179,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B267F851D930C41001A6A21 /* Build configuration list for PBXNativeTarget "LcboApp" */;
 			buildPhases = (
+				B604D172A6A788B437C50F3E /* [CP] Check Pods Manifest.lock */,
 				0B267F641D930C41001A6A21 /* Sources */,
 				0B267F651D930C41001A6A21 /* Frameworks */,
 				0B267F661D930C41001A6A21 /* Resources */,
+				2D52D1C10413102C1790A21B /* [CP] Embed Pods Frameworks */,
+				4F3306403E4B0D59A8C1AE27 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,14 +275,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D52D1C10413102C1790A21B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LcboApp/Pods-LcboApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F3306403E4B0D59A8C1AE27 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LcboApp/Pods-LcboApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B604D172A6A788B437C50F3E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0B267F641D930C41001A6A21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0B267F6E1D930C41001A6A21 /* MainVC.swift in Sources */,
+				0BB092B21D93369D00A71A79 /* LiquorResults.swift in Sources */,
+				0B267F971D931D84001A6A21 /* LiquorCell.swift in Sources */,
 				0B267F6C1D930C41001A6A21 /* AppDelegate.swift in Sources */,
 				0B267F911D9314EA001A6A21 /* Constants.swift in Sources */,
+				0B267F951D931A22001A6A21 /* Liquor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +468,7 @@
 		};
 		0B267F861D930C41001A6A21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E416D4C2160F403B85DB90D /* Pods-LcboApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5D85NHEHT6;
@@ -394,6 +482,7 @@
 		};
 		0B267F871D930C41001A6A21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77466EB21C8FDFF2A7005FB9 /* Pods-LcboApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 5D85NHEHT6;
@@ -454,6 +543,7 @@
 				0B267F871D930C41001A6A21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B267F881D930C41001A6A21 /* Build configuration list for PBXNativeTarget "LcboAppTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +552,7 @@
 				0B267F8A1D930C41001A6A21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

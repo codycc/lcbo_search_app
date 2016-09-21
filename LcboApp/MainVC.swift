@@ -7,19 +7,66 @@
 //
 
 import UIKit
+import Alamofire
 
-class MainVC: UIViewController {
 
+class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var liquorResults: LiquorResults!
+    var liquorArr = [LiquorResults]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        tableView.dataSource = self
+        tableView.delegate = self
+        //searchBar.delegate = self
+        self.downloadLiquorData {
+            
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func downloadLiquorData(completed: @escaping DownloadComplete) {
+        //Downloading liquor data for tableview 
+        let liquorURL = URL(string: FULL_URL)!
+        
+        Alamofire.request(liquorURL).responseJSON { response in
+            let result = response.result
+            // run through every rslt in the api and store each item in the liquor array
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                if let rslt = dict["result"] as? [Dictionary<String, AnyObject>] {
+                    for obj in rslt {
+                        // passing in each object into the liquorresults class
+                        let liquorResult = LiquorResults(liquorDict: obj)
+                        self.liquorArr.append(liquorResult)
+                        print(obj)
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+            completed()
+        }
     }
-
-
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return liquorArr.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "LiquorCell", for: indexPath) as? LiquorCell {
+            // pull out each liquor from the liquor array
+            let liquor = liquorArr[indexPath.row]
+            cell.configureCell(liquor: liquor)
+            return cell
+        } else {
+            return LiquorCell()
+        }
+        
+    }
 }
 
