@@ -15,10 +15,24 @@ class LiquorCell: UITableViewCell {
     @IBOutlet weak var ItemNameLbl: UILabel!
     @IBOutlet weak var itemPriceLbl: UILabel!
     @IBOutlet weak var productSizeLbl: UILabel!
+    
+    
+    func changeToDollars(price: Int) -> String  {
+        let newPrice = Double(price)
+        let newAmount = "$\(newPrice / 100.00)"
+        return newAmount
+    }
+    
 
     func configureCell(liquor: LiquorResults) {
         ItemNameLbl.text = liquor.name
-        itemPriceLbl.text = "\(liquor.price_in_cents)"
+        // Change string of price in cents to and int
+        let price_in_cents_int = Int(liquor.price_in_cents)
+        // passing that int into my function and storing it as new format
+        let formattedAmount = changeToDollars(price: price_in_cents_int!)
+        //Updating the label with new formatted amount
+        itemPriceLbl.text = formattedAmount
+        
         productSizeLbl.text = liquor.package
         
         
