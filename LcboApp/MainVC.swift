@@ -76,6 +76,7 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISea
         }
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        liquorArr.removeAll()
         var text = searchBar.text?.lowercased()
         let newText = text!.replacingOccurrences(of: " ", with: "+")
         print(newText)
@@ -103,20 +104,15 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISea
                 }
                 completed()
             }
-            
+          
         }
+        print(newText)
         downloadLiquorData {
             
         }
         
     }
     
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
- 
-     
-        
-    }
     
 }
 
