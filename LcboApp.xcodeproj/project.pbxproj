@@ -14,7 +14,6 @@
 		0B267F761D930C41001A6A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B267F741D930C41001A6A21 /* LaunchScreen.storyboard */; };
 		0B267F811D930C41001A6A21 /* LcboAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F801D930C41001A6A21 /* LcboAppTests.swift */; };
 		0B267F911D9314EA001A6A21 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F901D9314EA001A6A21 /* Constants.swift */; };
-		0B267F951D931A22001A6A21 /* Liquor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F941D931A22001A6A21 /* Liquor.swift */; };
 		0B267F971D931D84001A6A21 /* LiquorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F961D931D84001A6A21 /* LiquorCell.swift */; };
 		0B2E758E1D94323100A6B317 /* LiquorDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E758D1D94323100A6B317 /* LiquorDetailVC.swift */; };
 		0BB092B21D93369D00A71A79 /* LiquorResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB092B11D93369D00A71A79 /* LiquorResults.swift */; };
@@ -43,7 +42,6 @@
 		0B267F801D930C41001A6A21 /* LcboAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LcboAppTests.swift; sourceTree = "<group>"; };
 		0B267F821D930C41001A6A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B267F901D9314EA001A6A21 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		0B267F941D931A22001A6A21 /* Liquor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Liquor.swift; sourceTree = "<group>"; };
 		0B267F961D931D84001A6A21 /* LiquorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquorCell.swift; sourceTree = "<group>"; };
 		0B2E758D1D94323100A6B317 /* LiquorDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquorDetailVC.swift; sourceTree = "<group>"; };
 		0BB092B11D93369D00A71A79 /* LiquorResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquorResults.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 		0B267F8B1D930C4A001A6A21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0B267F941D931A22001A6A21 /* Liquor.swift */,
 				0BB092B11D93369D00A71A79 /* LiquorResults.swift */,
 			);
 			name = Model;
@@ -337,7 +334,6 @@
 				0B2E758E1D94323100A6B317 /* LiquorDetailVC.swift in Sources */,
 				0B267F6C1D930C41001A6A21 /* AppDelegate.swift in Sources */,
 				0B267F911D9314EA001A6A21 /* Constants.swift in Sources */,
-				0B267F951D931A22001A6A21 /* Liquor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

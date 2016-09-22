@@ -25,9 +25,6 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISea
         searchBar.delegate = self
     }
     
-    
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -75,18 +72,23 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISea
             }
         }
     }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //clear the array so the previous search isnt included
         liquorArr.removeAll()
+        //setting the text
         var text = searchBar.text?.lowercased()
+        // taking out spaces from search and replacing with + so it can be entered in the query
         let newText = text!.replacingOccurrences(of: " ", with: "+")
         print(newText)
+        // setting the new url for alamofire
         let NEW_URL = "https://lcboapi.com/products?q=\(newText)&access_key=\(ACCESS_KEY)"
         print(NEW_URL)
         
         func downloadLiquorData(completed: @escaping DownloadComplete) {
             //Downloading liquor data for tableview
             let liquorURL = URL(string: NEW_URL)!
-            
+            // making the request with the search data
             Alamofire.request(liquorURL).responseJSON { response in
                 let result = response.result
                 // run through every rslt in the api and store each item in the liquor array
@@ -104,15 +106,10 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISea
                 }
                 completed()
             }
-          
         }
-        print(newText)
+        // calling the function 
         downloadLiquorData {
-            
         }
-        
     }
-    
-    
 }
 

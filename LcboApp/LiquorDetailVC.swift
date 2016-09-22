@@ -33,10 +33,9 @@ class LiquorDetailVC: UIViewController {
         let formattedContent = convertAlcoholContent(amount: contentToInt!)
         percentLbl.text = formattedContent
         
+        //updating other two labels
         itemSizeLbl.text = liquor.package
         descriptionLbl.text = liquor.description
-        
-        
         // Do any additional setup after loading the view.
     }
     
@@ -52,11 +51,6 @@ class LiquorDetailVC: UIViewController {
         return newAmount
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func backBtnPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
