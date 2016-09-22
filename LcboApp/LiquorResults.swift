@@ -14,7 +14,8 @@ class LiquorResults {
     private var _price_in_cents: String!
     private var _package: String!
     private var _itemURL: String!
-    
+    private var _description: String!
+    private var _alcohol_content: String!
     
     var name: String {
         if _name == nil {
@@ -44,6 +45,20 @@ class LiquorResults {
         return _itemURL
     }
     
+    var description: String {
+        if _description == nil {
+            _description = ""
+        }
+        return _description
+    }
+    
+    var alcohol_content: String {
+        if _alcohol_content == nil {
+            _alcohol_content = ""
+        }
+        return _alcohol_content
+    }
+    
 
     //passing in a dictionary everytime we create an instance of liquor results 
     init(liquorDict: Dictionary<String, AnyObject>) {
@@ -61,6 +76,14 @@ class LiquorResults {
         
         if let URL = liquorDict["image_url"] as? String {
             self._itemURL = URL
+        }
+        
+        if let description = liquorDict["description"] as? String {
+            self._description = description
+        }
+        
+        if let alcohol_content = liquorDict["alcohol_content"] as? Int {
+            self._alcohol_content = "\(alcohol_content)"
         }
         
         

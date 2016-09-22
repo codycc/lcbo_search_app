@@ -59,6 +59,14 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
         return liquorArr.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //Grab the item out of the array that corresponds with the indexpath.row 
+        var selectedLiquor: LiquorResults!
+        selectedLiquor = liquorArr[indexPath.row]
+        print(selectedLiquor)
+        performSegue(withIdentifier: "LiquorDetailVC", sender: selectedLiquor)
+    }
+    
     // going through the liquor array and storing each one in a cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "LiquorCell", for: indexPath) as? LiquorCell {
@@ -71,6 +79,20 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
             return LiquorCell()
         }
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // if the segue is called liquordetailvc
+        if segue.identifier == "LiquorDetailVC" {
+            // if the destination is the liquor detail view controller
+            if let detailsVC = segue.destination as? LiquorDetailVC {
+               // if the info is an instance of liquor results
+                if let liquor2 = sender as? LiquorResults {
+                    // this instance sends through to the variable on the other side 
+                    detailsVC.liquor = liquor2
+                }
+            }
+        }
     }
 }
 

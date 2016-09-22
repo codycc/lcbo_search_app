@@ -16,6 +16,7 @@
 		0B267F911D9314EA001A6A21 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F901D9314EA001A6A21 /* Constants.swift */; };
 		0B267F951D931A22001A6A21 /* Liquor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F941D931A22001A6A21 /* Liquor.swift */; };
 		0B267F971D931D84001A6A21 /* LiquorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B267F961D931D84001A6A21 /* LiquorCell.swift */; };
+		0B2E758E1D94323100A6B317 /* LiquorDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2E758D1D94323100A6B317 /* LiquorDetailVC.swift */; };
 		0BB092B21D93369D00A71A79 /* LiquorResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB092B11D93369D00A71A79 /* LiquorResults.swift */; };
 		5D0FCB0FDA912CAEE64FE167 /* Pods_LcboApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EE8A8F7E2E540BE2CFCEF1 /* Pods_LcboApp.framework */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		0B267F901D9314EA001A6A21 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0B267F941D931A22001A6A21 /* Liquor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Liquor.swift; sourceTree = "<group>"; };
 		0B267F961D931D84001A6A21 /* LiquorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquorCell.swift; sourceTree = "<group>"; };
+		0B2E758D1D94323100A6B317 /* LiquorDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquorDetailVC.swift; sourceTree = "<group>"; };
 		0BB092B11D93369D00A71A79 /* LiquorResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiquorResults.swift; sourceTree = "<group>"; };
 		42EE8A8F7E2E540BE2CFCEF1 /* Pods_LcboApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LcboApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E416D4C2160F403B85DB90D /* Pods-LcboApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LcboApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LcboApp/Pods-LcboApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				0B267F6D1D930C41001A6A21 /* MainVC.swift */,
+				0B2E758D1D94323100A6B317 /* LiquorDetailVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				0B267F6E1D930C41001A6A21 /* MainVC.swift in Sources */,
 				0BB092B21D93369D00A71A79 /* LiquorResults.swift in Sources */,
 				0B267F971D931D84001A6A21 /* LiquorCell.swift in Sources */,
+				0B2E758E1D94323100A6B317 /* LiquorDetailVC.swift in Sources */,
 				0B267F6C1D930C41001A6A21 /* AppDelegate.swift in Sources */,
 				0B267F911D9314EA001A6A21 /* Constants.swift in Sources */,
 				0B267F951D931A22001A6A21 /* Liquor.swift in Sources */,
