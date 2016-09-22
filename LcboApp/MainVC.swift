@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 
-class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
+class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,42 +22,21 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
         // Do any additional setup after loading the view, typically from a nib.
         tableView.dataSource = self
         tableView.delegate = self
-        //searchBar.delegate = self
-        self.downloadLiquorData {
-            
-        }
+        searchBar.delegate = self
     }
     
-    func downloadLiquorData(completed: @escaping DownloadComplete) {
-        //Downloading liquor data for tableview 
-        let liquorURL = URL(string: FULL_URL)!
-        
-        Alamofire.request(liquorURL).responseJSON { response in
-            let result = response.result
-            // run through every rslt in the api and store each item in the liquor array
-            if let dict = result.value as? Dictionary<String, AnyObject> {
-                if let rslt = dict["result"] as? [Dictionary<String, AnyObject>] {
-                    for obj in rslt {
-                        // passing in each object into the liquorresults class
-                        let liquorResult = LiquorResults(liquorDict: obj)
-                        self.liquorArr.append(liquorResult)
-                        print(obj)
-                    }
-                    //dont forget to reload the data
-                    self.tableView.reloadData()
-                }
-            }
-            completed()
-        }
-    }
+    
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return liquorArr.count
     }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Grab the item out of the array that corresponds with the indexpath.row 
@@ -66,6 +45,7 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
         print(selectedLiquor)
         performSegue(withIdentifier: "LiquorDetailVC", sender: selectedLiquor)
     }
+    
     
     // going through the liquor array and storing each one in a cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -81,6 +61,7 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
         
     }
     
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // if the segue is called liquordetailvc
         if segue.identifier == "LiquorDetailVC" {
@@ -94,5 +75,48 @@ class MainVC: UIViewController,UITableViewDelegate, UITableViewDataSource{
             }
         }
     }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        var text = searchBar.text?.lowercased()
+        let newText = text!.replacingOccurrences(of: " ", with: "+")
+        print(newText)
+        let NEW_URL = "https://lcboapi.com/products?q=\(newText)&access_key=\(ACCESS_KEY)"
+        print(NEW_URL)
+        
+        func downloadLiquorData(completed: @escaping DownloadComplete) {
+            //Downloading liquor data for tableview
+            let liquorURL = URL(string: NEW_URL)!
+            
+            Alamofire.request(liquorURL).responseJSON { response in
+                let result = response.result
+                // run through every rslt in the api and store each item in the liquor array
+                if let dict = result.value as? Dictionary<String, AnyObject> {
+                    if let rslt = dict["result"] as? [Dictionary<String, AnyObject>] {
+                        for obj in rslt {
+                            // passing in each object into the liquorresults class
+                            let liquorResult = LiquorResults(liquorDict: obj)
+                            self.liquorArr.append(liquorResult)
+                            print(obj)
+                        }
+                        //dont forget to reload the data
+                        self.tableView.reloadData()
+                    }
+                }
+                completed()
+            }
+            
+        }
+        downloadLiquorData {
+            
+        }
+        
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        
+ 
+     
+        
+    }
+    
 }
 
