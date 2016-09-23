@@ -13,7 +13,6 @@ class LiquorDetailVC: UIViewController {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemSizeLbl: UILabel!
-    @IBOutlet weak var descriptionLbl: UILabel!
     @IBOutlet weak var percentLbl: UILabel!
     
     var liquor: LiquorResults!
@@ -35,8 +34,22 @@ class LiquorDetailVC: UIViewController {
         
         //updating other two labels
         itemSizeLbl.text = liquor.package
-        descriptionLbl.text = liquor.description
         // Do any additional setup after loading the view.
+        
+        if let url = URL(string: liquor.itemURL) {
+            DispatchQueue.global().async {
+                do {
+                    let data = try Data(contentsOf: url)
+                    DispatchQueue.global().sync {
+                        self.itemImage.image = UIImage(data: data)
+                    }
+                } catch {
+                    // handle the error
+                    print("there was an error with selected photo")
+                }
+            }
+            
+        }
     }
     
     func changeToDollars(price: Int) -> String  {
